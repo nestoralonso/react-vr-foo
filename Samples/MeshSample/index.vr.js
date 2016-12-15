@@ -31,33 +31,64 @@ import {
   PointLight,
   Text,
   View,
+  VrButton,
 } from 'react-vr';
 
 class MeshSample extends React.Component {
   constructor() {
     super();
-    this.state      = {rotation: 0};
+
+    const frames = new Array(7)
+      .fill(null)
+      .map((v, i) => ({
+              mesh: asset(`Lombana0${ i + 1 }.obj`),
+              mtl: asset('Lombana.mtl'),
+              lit: true,
+          }));
+
+    this.state = {
+      rotation: 0,
+      currFrame: 0,
+      isRotating: false,
+    };
+
+
     this.lastUpdate = Date.now();
-    this.rotate     = this.rotate.bind(this);
+    this.elapsedT = 0;
+    this.meshFrames = frames;
+    this.updateFrame = this.updateFrame.bind(this);
   }
 
   /**
-   * After kickoff in componentDidMount(), rotate is called every frame through
+   * After kickoff in componentDidMount(), updateFrame is called every frame through
    * requestAnimationFrame. It updates the state.rotation variable used to rotate
-   * the model based om on time measurement; this is important to account for
+   * the model based on on time measurement; this is important to account for
    * different VR headset framerates.
    */
-  rotate() {
+  updateFrame() {
     const now       = Date.now();
     const delta     = now - this.lastUpdate;
     this.lastUpdate = now;
+    this.elapsedT += delta;
+    let frmIdx = this.state.currFrame;
+    if (this.elapsedT > 1000) {
+      this.elapsedT = 0;
+      frmIdx++;
+      if (frmIdx > 6) {
+        frmIdx = 0;
+      }
+    }
 
-    this.setState({rotation: this.state.rotation + delta / 20});
-    this.frameHandle = requestAnimationFrame(this.rotate);
+    let rotation = this.state.isRotating ? this.state.rotation + delta / 20 : 0;
+    this.setState({
+      rotation,
+      currFrame: frmIdx,
+    });
+    this.frameHandle = requestAnimationFrame(this.updateFrame);
   }
 
   componentDidMount() {
-    this.rotate();
+    this.updateFrame();
   }
 
   componentWillUnmount() {
@@ -68,41 +99,58 @@ class MeshSample extends React.Component {
   }
 
   render() {
-    // We build a view scene out of three elements:
-    //   - A mesh that displays a rotating object
-    //   - A point light, useful for adding color to the mesh material which would otherwise be dark.
-    //   - Text message positioned above the creature
-    // A chain of transformations is applied to the mesh, which are executed from right to left.
-    // In out case, the mesh was too large for the scene and oriented sideways, so we scaled it and
-    // rotated it into place. This would not be necessary if your object had correct size ot begin with.
-    // We are also applying a new rotation around the Y axis every frame to produce the desired animation.
+    const frame = this.meshFrames[this.state.currFrame];
+    const explodedAnim = this.meshFrames
+      .map((src, i) => (<Mesh key={i}
+        style={{
+          transform: [
+            {translate: [-50 + i * 15, -15, -70]},
+            {scale : 0.1 },
+          ],
+        }}
+        source={this.meshFrames[i]}
+      />));
     return (
       <View>
         <Pano source={asset('chess-world.jpg')}/>
-        <Mesh
-          style={{
-            transform: [
-              {translate: [0, -15, -70]},
-              {scale : 0.1 },
-              {rotateY : this.state.rotation},
-              {rotateX : -90}
-            ],
-          }}
-          source={{mesh:asset('Lombana01.obj'), mtl:asset('Lombana01.mtl'), lit: true}}
-        />
+        {this.state.explodeMesh ?
+          <Mesh
+            style={{
+              transform: [
+                {translate: [0, -15, -70]},
+                {scale : 0.1 },
+              ],
+            }}
+            source={frame}
+          />
+          : explodedAnim
+        }
         <PointLight style={{color:'white', transform:[{translate : [0, 400, 700]}]}} />
 
-        <Text style={{
-          backgroundColor:'grey',
-          padding: 0.1,
-          textAlign:'center',
-          textAlignVertical:'center',
-          fontSize: 0.4,
-          position: 'absolute',
-          transform: [{translate: [0, -2.5, -7]}],
-          layoutOrigin: [0.5, 0.5]}}>
-        Creature</Text>
-        </View>
+        <VrButton
+          style={{
+            backgroundColor: 'blue',
+            borderRadius: 0.05,
+            margin: 0.05,
+          }}
+          onClick={() => {
+            this.setState({
+              explodeMesh: !this.state.explodeMesh
+            });
+          }}
+        >
+          <Text style={{
+            backgroundColor:'grey',
+            padding: 0.1,
+            textAlign:'center',
+            textAlignVertical:'center',
+            fontSize: 0.4,
+            position: 'absolute',
+            transform: [{translate: [0, -2.5, -7]}],
+            layoutOrigin: [0.5, 0.5]}}>
+            Baila</Text>
+        </VrButton>
+      </View>
     );
   }
 };
