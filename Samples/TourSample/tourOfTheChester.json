@@ -1,0 +1,254 @@
+{
+   "nav_icon": "chester_icon.png",
+   "firstPhotoId":"112379",
+   "firstPhotoRotation":150,
+   "photos":{
+      "112362":{
+         "rotationOffset": 0,
+         "uri":"the-chester--v112362.prefilter.jpg",
+         "tooltips":[
+            {
+               "text":"The Bar",
+               "position":[
+                  -9.929,
+                  0
+               ],
+               "linkedPhotoId":"112379"
+            },
+            {
+               "text":"Biergarten",
+               "position":[
+                  -106.844,
+                  0
+               ],
+               "linkedPhotoId":"112355"
+            },
+            {
+               "text":"The Arthur",
+               "position":[
+                  170.42,
+                  0
+               ],
+               "linkedPhotoId":"112399"
+            },
+            {
+               "type": "image",
+               "position":[
+                  115,
+                  0
+               ],
+               "width": 1.020,
+               "height": 1.388,
+               "source":"chalkboard-menu.jpg",
+               "attribution": "Photo by currystrumpet on flickr",
+               "attributionUri": "https://www.flickr.com/photos/currystrumpet/7895715748"
+            }
+         ]
+      },
+      "112379":{
+         "rotationOffset": -120,
+         "uri":"the-chester--v112379.prefilter.jpg",
+         "tooltips":[
+            {
+               "text":"Restaurant",
+               "position":[
+                  -64.525,
+                  0
+               ],
+               "linkedPhotoId":"112362"
+            },
+            {
+               "type": "panelimage",
+               "position":[
+                  140,
+                  0
+               ],
+               "width": 1.280,
+               "height": 1.280,
+               "source": "old-fashioned.jpg",
+               "text": "Bar open until midnight M-F and 2:00 a.m. weekends.",
+               "attribution": "Photo by Will Shenton",
+               "attributionUri": "https://commons.wikimedia.org/wiki/File:The_Young_Laddie_Cocktail.jpg"
+            },
+            {
+               "type": "textblock",
+               "title": "The Chester",
+               "text": "An American restaurant, bar, and private event space located in The Gansevoort Hotel in New York City, The Chester is designed to bring guests together at any time of day. It features a vibrant bar scene and a lively dining ara, as well as an exclusive boutique nightclub and outdoor beirgarten.",
+               "attribution": "360 Photos courtesy of Oyster.com, text from TheChester.com",
+               "position":[
+                  0,
+                  0
+               ],
+               "width": 1.5,
+               "height": 1.5
+            }
+         ]
+      },
+      "112355":{
+         "rotationOffset": -30,
+         "uri":"the-chester--v112355.prefilter.jpg",
+         "tooltips":[
+            {
+               "text":"Biergarten",
+               "position":[
+                  21.347,
+                  0
+               ],
+               "linkedPhotoId":"112393"
+            },
+            {
+               "text":"Restaurant",
+               "position":[
+                  117.441,
+                  0
+               ],
+               "linkedPhotoId":"112362"
+            },
+            {
+               "text":"Biergarten",
+               "position":[
+                  -151.392,
+                  0
+               ],
+               "linkedPhotoId":"112351"
+            },
+            {
+               "type": "panelimage",
+               "position":[
+                  290,
+                  0
+               ],
+               "width": 1.280,
+               "height":0.850,
+               "source":"beer-cheers.jpg",
+               "text": "The Chester Biergarten is ideal for group dining and social gatherings. Enjoy casual picnic-table seating and views of the historic Meatpacking District.",
+               "attribution": "Photo by yutacar on upslash",
+               "attributionUri": "https://unsplash.com/photos/JKMnm3CIncw"
+            }
+         ]
+      },
+      "112392":{
+         "rotationOffset": 80,
+         "uri":"the-chester--v112392.prefilter.jpg",
+         "tooltips":[
+            {
+               "text":"The Snug",
+               "position":[
+                  -11.33789063,
+                  0
+               ],
+               "linkedPhotoId":"112371"
+            },
+            {
+               "text":"Biergarten",
+               "position":[
+                  -112.2363281,
+                  0
+               ],
+               "linkedPhotoId":"112351"
+            }
+         ]
+      },
+      "112399":{
+         "rotationOffset": 90,
+         "uri":"the-chester--v112399.prefilter.jpg",
+         "tooltips":[
+            {
+               "text":"Restaurant",
+               "position":[
+                  //-110.755,
+                  -115,
+                  0
+               ],
+               "linkedPhotoId":"112362"
+            },
+            {
+               "type": "panelimage",
+               "position":[
+                  80,
+                  0
+               ],
+               "width": 1.280,
+               "height": 0.854,
+               "source":"whiskey-sour.jpg",
+               "title": "The Arthur",
+               "text": "A intimate, upscale lounge and event space offerring custom-curated cocktails. Arthur heats up during the weekends with a live DJ set.",
+               "attribution":"Photo by scaredykat on flickr",
+               "attributionUri": "https://www.flickr.com/photos/scaredykat/3437186488"
+            },
+            {
+               "type": "image",
+               "position":[
+                  -53,
+                  0
+               ],
+               "width": 1.020,
+               "height": 1.388,
+               "source":"chalkboard-menu.jpg",
+               "attribution": "Photo by currystrumpet on flickr",
+               "attributionUri": "https://www.flickr.com/photos/currystrumpet/7895715748"
+            }
+         ]
+      },
+      "112371":{
+         "rotationOffset": -20,
+         "uri":"the-chester--v112371.prefilter.jpg",
+         "tooltips":[
+            {
+               "text":"Biergarten",
+               "position":[
+                  -92.02148438,
+                  0
+               ],
+               "linkedPhotoId":"112392"
+            },
+            {
+               "type": "textblock",
+               "text": "Cosy athmosphere with fine leather seats. Relax with friends and select from a wide range of German beers. The late-night bites menu includes pretzels, hot wings, and sliders.",
+               "position":[
+                  100.42,
+                  0
+               ],
+               "width": 1.0,
+               "height": 1.0
+            }
+         ]
+      },
+      "112393":{
+         "rotationOffset": 140,
+         "uri":"the-chester--v112393.prefilter.jpg",
+         "tooltips":[
+            {
+               "text":"Biergarten",
+               "position":[
+                  29.348,
+                  0
+               ],
+               "linkedPhotoId":"112355"
+            }
+         ]
+      },
+      "112351":{
+         "rotationOffset": -80,
+         "uri":"the-chester--v112351.prefilter.jpg",
+         "tooltips":[
+            {
+               "text":"Biergarten",
+               "position":[
+                  -102.793,
+                  0
+               ],
+               "linkedPhotoId":"112392"
+            },
+            {
+               "text":"Biergarten",
+               "position":[
+                  63.843,
+                  0
+               ],
+               "linkedPhotoId":"112355"
+            }
+         ]
+      }
+   }
+}
