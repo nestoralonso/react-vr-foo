@@ -3,4 +3,4 @@ To resolve try the following:
   2. Delete the `node_modules` folder: `rm -rf node_modules && npm install`.
   3. Reset packager cache: `rm -fr $TMPDIR/react-*` or `npm start -- --reset-cache`.
 
-Lol2
+foobaz
